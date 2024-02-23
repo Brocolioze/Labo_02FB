@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -59,6 +61,8 @@ public class MainActivity2 extends AppCompatActivity  {
 
 
         Intent intent = getIntent();
+
+
 
 
         idBack.setOnClickListener(new View.OnClickListener() {
@@ -127,28 +131,16 @@ public class MainActivity2 extends AppCompatActivity  {
         });
 
 
-        /*
-        InterfaceUtilisateur serveur = RetrofitInstance.getInstance().create(InterfaceUtilisateur.class);
-        Call<List<Joueur>> call = serveur.getIdEquipe(equipeId);
-        call.enqueue(new Callback<List<Joueur>>() {
-            @Override
-            public void onResponse(Call<List<Joueur>> call, Response<List<Joueur>> response) {
-                if (response.isSuccessful() && response.body() != null) {
-                    List<Joueur> joueurList = response.body();
-                    listeJoueurs.clear();
-                    listeJoueurs.addAll(joueurList);
-                    adapterJoueur.notifyDataSetChanged();
-                } else {
-                    Toast.makeText(MainActivity2.this, "Erreur lors de la récupération des joueurs", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Joueur>> call, Throwable t) {
-                Toast.makeText(MainActivity2.this, "Une erreur est survenue : " + t.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });*/
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_activity2,menu);
+        return true;
+    }
+
+
 
 
 }

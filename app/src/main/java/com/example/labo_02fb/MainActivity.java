@@ -36,11 +36,6 @@ public class MainActivity extends AppCompatActivity implements AdapterEquipe.Int
 
         getListEquipe();
 
-
-       // adapterEquipe = new AdapterEquipe(liste, this);
-        //rvListeEquipe.setAdapter(adapterEquipe);
-
-
     }
 
     public void getListEquipe() {
@@ -65,33 +60,6 @@ public class MainActivity extends AppCompatActivity implements AdapterEquipe.Int
             }
         });
 
-
-
-
-        /*
-        InterfaceUtilisateur serveur = RetrofitInstance.getInstance().create(InterfaceUtilisateur.class);
-
-        Call<List<Equipe>> call = serveur.getEquipe();
-
-        call.enqueue(new Callback<List<Equipe>>() {
-            @Override
-            public void onResponse(Call<List<Equipe>> call, Response<List<Equipe>> response) {
-
-                    List<Equipe> equipeList = response.body();
-                    liste.clear();
-                    liste.addAll(equipeList);
-                    adapterEquipe.notifyDataSetChanged();
-
-                    Toast.makeText(MainActivity.this, "Une erreur est survenue lors de la récupération des équipes", Toast.LENGTH_LONG).show();
-                }
-
-
-            @Override
-            public void onFailure(Call<List<Equipe>> call, Throwable t) {
-
-                Toast.makeText(MainActivity.this, "Une erreur est survenue lors de la récupération des équipes", Toast.LENGTH_LONG).show();
-            }
-        });*/
     }
 
     @Override
