@@ -44,15 +44,6 @@ public class AdapterJoueur extends RecyclerView.Adapter<AdapterJoueur.ViewHolder
         holder.nom.setText(joueur.getNom());
         holder.prenom.setText(joueur.getPrenom());
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), MainActivity2.class);
-                intent.putExtra("equipe_id", joueur.getIdEquipe());
-                intent.putExtra("joueur_id", joueur.getIdJoueur());
-                v.getContext().startActivity(intent);
-            }
-        });
     }
 
 

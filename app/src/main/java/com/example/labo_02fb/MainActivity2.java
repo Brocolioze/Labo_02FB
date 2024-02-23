@@ -1,6 +1,7 @@
 package com.example.labo_02fb;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -54,7 +55,7 @@ public class MainActivity2 extends AppCompatActivity  {
 
         rvListeJoueur = findViewById(R.id.rvListeJoueur);
         rvListeJoueur.setHasFixedSize(true);
-        rvListeJoueur.setLayoutManager(new LinearLayoutManager(this));
+        rvListeJoueur.setLayoutManager(new GridLayoutManager(this,2) );
 
 
         Intent intent = getIntent();
