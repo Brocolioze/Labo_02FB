@@ -16,7 +16,8 @@ public interface InterfaceUtilisateur {
     @POST("/H2024/420636RI/GR02/b_faleyras/addJoueur.php")
     @FormUrlEncoded
     Call<Boolean>addJoueur(@Field("nom") String nom,
-                                 @Field("prenom") String prenom);
+                                 @Field("prenom") String prenom,
+                           @Field("idEquipe") int id);
 
 
     @GET("/H2024/420636RI/GR02/b_faleyras/getJoueur.php")
