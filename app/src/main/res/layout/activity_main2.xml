@@ -11,11 +11,12 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListeJoueur"
-        android:layout_width="143dp"
-        android:layout_height="196dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="315dp">
+        app:layout_constraintTop_toBottomOf="@+id/EquipeNom">
 
     </androidx.recyclerview.widget.RecyclerView>
 
@@ -25,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -34,9 +35,23 @@
         android:id="@+id/EquipeNom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="257dp" />
+        app:layout_constraintTop_toBottomOf="@+id/LogoEquipe" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/idBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:clickable="true"
+        app:layout_constraintEnd_toStartOf="@+id/LogoEquipe"
+        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

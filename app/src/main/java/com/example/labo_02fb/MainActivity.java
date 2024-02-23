@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements AdapterEquipe.Int
             @Override
             public void onResponse(Call<List<Equipe>> call, Response<List<Equipe>> response) {
                 List<Equipe> liste = response.body();
-                adapterEquipe = new AdapterEquipe(liste);
+                adapterEquipe = new AdapterEquipe(liste, MainActivity.this);
                 rvListeEquipe.setAdapter(adapterEquipe);
             }
 

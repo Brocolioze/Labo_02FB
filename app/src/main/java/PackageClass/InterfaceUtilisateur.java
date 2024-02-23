@@ -20,7 +20,7 @@ public interface InterfaceUtilisateur {
 
 
     @GET("/H2024/420636RI/GR02/b_faleyras/getJoueur.php")
-    Call<List<Joueur>> getIdEquipe(@Query("id") int id);
+    Call<List<Joueur>> getIdEquipe(@Query("idEquipe") int id);
 
 
 

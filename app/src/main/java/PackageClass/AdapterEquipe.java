@@ -24,7 +24,7 @@ public class AdapterEquipe extends RecyclerView.Adapter<AdapterEquipe.ViewHolder
     List<Equipe>liste;
 
 
-    public AdapterEquipe(List<Equipe> liste) {
+    public AdapterEquipe(List<Equipe> liste, InterfaceEquipe interfaceEquipe) {
 
         this.liste = liste;
         this.interfaceEquipe = interfaceEquipe;

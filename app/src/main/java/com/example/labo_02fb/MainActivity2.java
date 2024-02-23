@@ -35,6 +35,8 @@ public class MainActivity2 extends AppCompatActivity  {
     ImageView LogoEquipe;
     TextView EquipeNom;
 
+    FloatingActionButton idBack;
+
 
 
     @Override
@@ -43,17 +45,32 @@ public class MainActivity2 extends AppCompatActivity  {
         setContentView(R.layout.activity_main2);
 
 
+
         LogoEquipe = findViewById(R.id.LogoEquipe);
         EquipeNom = findViewById(R.id.EquipeNom);
+
+
+        idBack = findViewById(R.id.idBack);
 
         rvListeJoueur = findViewById(R.id.rvListeJoueur);
         rvListeJoueur.setHasFixedSize(true);
         rvListeJoueur.setLayoutManager(new LinearLayoutManager(this));
 
 
-
-
         Intent intent = getIntent();
+
+
+        idBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                setResult(RESULT_CANCELED);
+                finish();
+
+            }
+
+
+        });
 
 
         if (intent != null && intent.hasExtra("equipe_id") && intent.hasExtra("equipe_logo") && intent.hasExtra("equipe_nom")) {
@@ -72,19 +89,19 @@ public class MainActivity2 extends AppCompatActivity  {
 
 
         }
+
     }
 
-    private void getListeJoueurs(int equipeId) {
+    private void getListeJoueurs(int equipe_ident) {
 
         InterfaceUtilisateur serveur = RetrofitInstance.getInstance().create(InterfaceUtilisateur.class);
 
-        Call<List<Joueur>> call = serveur.getIdEquipe(equipeId);
+        Call<List<Joueur>> call = serveur.getIdEquipe(equipe_ident);
 
         call.enqueue(new Callback<List<Joueur>>() {
             @Override
             public void onResponse(Call<List<Joueur>> call, Response<List<Joueur>> response) {
-
-
+                if (response.isSuccessful() ){
 
                 List<Joueur> liste = response.body();
 
@@ -93,6 +110,10 @@ public class MainActivity2 extends AppCompatActivity  {
 
                 rvListeJoueur.setAdapter(adapterJoueur);
 
+            }else{
+                    Toast.makeText(MainActivity2.this,"Une erreur",Toast.LENGTH_LONG).show();
+
+                }
             }
 
             @Override
@@ -103,10 +124,6 @@ public class MainActivity2 extends AppCompatActivity  {
 
             }
         });
-
-
-
-
 
 
         /*
@@ -131,4 +148,6 @@ public class MainActivity2 extends AppCompatActivity  {
             }
         });*/
     }
+
+
 }
