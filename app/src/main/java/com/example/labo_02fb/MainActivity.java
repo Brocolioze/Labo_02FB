@@ -6,10 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import PackageClass.AdapterEquipe;
@@ -20,7 +18,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity implements AdapterEquipe.InterfaceEquipe{
+public class MainActivity extends AppCompatActivity implements AdapterEquipe.InterfaceEquipe {
 
     RecyclerView rvListeEquipe;
     AdapterEquipe adapterEquipe;
@@ -35,13 +33,10 @@ public class MainActivity extends AppCompatActivity implements AdapterEquipe.Int
         rvListeEquipe.setLayoutManager(new LinearLayoutManager(this));
 
         getListEquipe();
-
     }
 
     public void getListEquipe() {
-
         InterfaceUtilisateur serveur = RetrofitInstance.getInstance().create(InterfaceUtilisateur.class);
-
         Call<List<Equipe>> call = serveur.getEquipe();
 
         call.enqueue(new Callback<List<Equipe>>() {
@@ -54,17 +49,13 @@ public class MainActivity extends AppCompatActivity implements AdapterEquipe.Int
 
             @Override
             public void onFailure(Call<List<Equipe>> call, Throwable t) {
-
                 Toast.makeText(MainActivity.this,"Une erreur",Toast.LENGTH_LONG).show();
-
             }
         });
-
     }
 
     @Override
     public void gestionClick(int position, Equipe equipe) {
-
         Intent intent = new Intent(MainActivity.this, MainActivity2.class);
         intent.putExtra("equipe_id", equipe.getIdEquipe());
         intent.putExtra("equipe_logo", equipe.getLogo());

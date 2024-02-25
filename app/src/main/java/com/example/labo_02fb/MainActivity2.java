@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.squareup.picasso.Picasso;
 
+import java.lang.ref.Reference;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,7 +44,9 @@ public class MainActivity2 extends AppCompatActivity {
     ImageView LogoEquipe;
     TextView EquipeNom;
 
-    //EditText nom_ajout_joueur,prenom_ajout_joueur;
+    int matricule_equipe;
+
+    EditText nom_ajout_joueur,prenom_ajout_joueur;
 
     FloatingActionButton idBack;
 
@@ -82,6 +85,8 @@ public class MainActivity2 extends AppCompatActivity {
 
         if (intent != null && intent.hasExtra("equipe_id") && intent.hasExtra("equipe_logo") && intent.hasExtra("equipe_nom")) {
             int equipeId = intent.getIntExtra("equipe_id", -1);
+
+            matricule_equipe = equipeId;
 
             String logo = intent.getStringExtra("equipe_logo");
 
@@ -126,14 +131,7 @@ public class MainActivity2 extends AppCompatActivity {
             });
 
             AlertDialog alertDialog1 = builder.create();
-
-
-
             alertDialog1.show();
-
-
-
-
              Toast.makeText(this,"Joueur Ajouter",Toast.LENGTH_LONG).show();
             return true;
 
@@ -181,8 +179,7 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     public void gestionClik(){
-/*
-        Intent intent = getIntent();
+
 
         if(nom_ajout_joueur.getText().toString().trim().isEmpty() || prenom_ajout_joueur.getText().toString().trim().isEmpty()){
 
@@ -192,7 +189,8 @@ public class MainActivity2 extends AppCompatActivity {
 
             InterfaceUtilisateur serveur = RetrofitInstance.getInstance().create(InterfaceUtilisateur.class);
 
-            //Call<Boolean> call = serveur.addJoueur(nom_ajout_joueur.getText().toString(),prenom_ajout_joueur.getText().toString());
+            Call<Boolean> call = serveur.addJoueur(nom_ajout_joueur.getText().toString(),prenom_ajout_joueur.getText().toString(),matricule_equipe);
+
 
             call.enqueue(new Callback<Boolean>() {
                 @Override
@@ -209,7 +207,7 @@ public class MainActivity2 extends AppCompatActivity {
 
 
 
-*/
+
     }
 
 
