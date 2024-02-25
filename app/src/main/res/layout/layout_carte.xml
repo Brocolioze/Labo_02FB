@@ -15,7 +15,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="text"
-            android:text="Name" />
+            android:text="prenom" />
 
         <EditText
             android:id="@+id/prenom_ajout_joueur"
@@ -24,7 +24,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="text"
-            android:text="Name" />
+            android:text="nom" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
