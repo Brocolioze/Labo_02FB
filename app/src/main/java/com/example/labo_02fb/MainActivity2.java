@@ -43,7 +43,7 @@ public class MainActivity2 extends AppCompatActivity {
     ImageView LogoEquipe;
     TextView EquipeNom;
 
-    EditText nom_ajout_joueur,prenom_ajout_joueur;
+    //EditText nom_ajout_joueur,prenom_ajout_joueur;
 
     FloatingActionButton idBack;
 
@@ -181,7 +181,7 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     public void gestionClik(){
-
+/*
         Intent intent = getIntent();
 
         if(nom_ajout_joueur.getText().toString().trim().isEmpty() || prenom_ajout_joueur.getText().toString().trim().isEmpty()){
@@ -192,7 +192,7 @@ public class MainActivity2 extends AppCompatActivity {
 
             InterfaceUtilisateur serveur = RetrofitInstance.getInstance().create(InterfaceUtilisateur.class);
 
-            Call<Boolean> call = serveur.addJoueur(nom_ajout_joueur.getText().toString(),prenom_ajout_joueur.getText().toString());
+            //Call<Boolean> call = serveur.addJoueur(nom_ajout_joueur.getText().toString(),prenom_ajout_joueur.getText().toString());
 
             call.enqueue(new Callback<Boolean>() {
                 @Override
@@ -209,7 +209,7 @@ public class MainActivity2 extends AppCompatActivity {
 
 
 
-
+*/
     }
 
 
